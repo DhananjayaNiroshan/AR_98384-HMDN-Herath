@@ -1,5 +1,3 @@
-from pickle import bytes_types
-from turtle import bye
 
 
 print("hiii")
