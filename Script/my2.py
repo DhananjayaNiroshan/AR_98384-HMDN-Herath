@@ -1,0 +1,1 @@
+print("ok or no")
