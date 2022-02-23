@@ -1,1 +1,1 @@
-print("cool")
+print("coo0l")
