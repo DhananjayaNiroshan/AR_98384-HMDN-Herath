@@ -1,1 +1,0 @@
-print("coo0l")
