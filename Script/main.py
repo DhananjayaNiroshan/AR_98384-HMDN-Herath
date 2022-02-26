@@ -18,3 +18,18 @@ linkedList.printForwardList()
 
 print("\n\nDoubly Linked List Print Backward :")
 linkedList.printBackwardList()
+
+print("\n\nDeleted First Node :")
+linkedList.deleteFirstNode()
+linkedList.printForwardList()
+
+print("\n\nDeleted given position Node :")
+linkedList.deleteNodeByPos(3)
+linkedList.printForwardList()
+
+print("\n\nDeleted Last Node :")
+linkedList.deleteLastNode()
+linkedList.printForwardList()
+
+print("\n\nDoubly Linked List Element Search")
+linkedList.searchValue(17)
