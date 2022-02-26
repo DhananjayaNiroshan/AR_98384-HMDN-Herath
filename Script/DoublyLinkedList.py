@@ -1,11 +1,10 @@
 from Node import Node
 
-
 class DoublyLinkedList:
-    def __init__(self):  
-        self.head = None  
-        self.tail = None  
-        self.length = 0  
+    def __init__(self):  # defining variable
+        self.head = None  # initially first node is none
+        self.tail = None  # initially last node is none
+        self.length = 0  # initially doubly linked list length is zero
 
     
     def doublyListLength(self):
