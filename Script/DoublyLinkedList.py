@@ -35,3 +35,15 @@ class DoublyLinkedList:
             while current is not None:  
                 print(current.getData(), end=" ")  
                 current = current.getPrev()  
+                
+    def addNodeBeginning(self, data):
+        newNode = Node(data)
+        newNode.setData(data)
+        if self.head is None:  
+            self.head = newNode  
+        else:
+            newNode.setNext(self.head)  
+            self.head.setPrev(newNode)  
+            newNode.setPrev(None)  
+            self.head = newNode  
+        self.length += 1 
