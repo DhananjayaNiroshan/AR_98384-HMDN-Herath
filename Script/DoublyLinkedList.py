@@ -38,17 +38,19 @@ class DoublyLinkedList:
                 print(current.getData(), end=" ")  # print data of current
                 current = current.getPrev()  # change previous of current as current
 
+      # add new node to the beginning
     def addNodeBeginning(self, data):
         newNode = Node(data)
         newNode.setData(data)
-        if self.head is None:  
-            self.head = newNode  
+        if self.head is None:  # checking head Node is Node
+            self.head = newNode  # create new node as head node
         else:
-            newNode.setNext(self.head)  
-            self.head.setPrev(newNode)  
-            newNode.setPrev(None)  
-            self.head = newNode  
-        self.length += 1 
+            newNode.setNext(self.head)  # create next of new node as head node
+            self.head.setPrev(newNode)  # create previous of head node as newNode
+            newNode.setPrev(None)  # create previous of new node as none
+            self.head = newNode  # change new node as head node
+        self.length += 1  # adding one to length
+
     
     def addNodeEnd(self, data):
         newNode = Node(data)
