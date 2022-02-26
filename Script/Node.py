@@ -21,3 +21,9 @@ class Node:
 
     def setPrev(self, addressB):
         self.prev = addressB
+
+    def hasNext(self):
+        return self.next is not None
+
+    def hasPrev(self):
+        return self.prev is not None
