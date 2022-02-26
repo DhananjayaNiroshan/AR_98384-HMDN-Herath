@@ -82,3 +82,48 @@ class DoublyLinkedList:
             current.getNext().setPrev(newNode)  
             current.setNext(newNode)  
         self.length += 1
+
+def addNodeInPos(self, pos, data):
+       
+        if pos > self.length - 1 or pos < 0:
+            return None
+        elif pos == self.length - 1:  
+            self.addNodeEnd(data)  
+        elif pos == 0:  
+            self.addNodeBeginning(data)  
+        else:
+            newNode = Node(data)
+            newNode.setData(data)
+            current = self.head
+            count = 0
+            while count != pos - 1:  
+                current = current.getNext()  
+                count += 1
+            newNode.setPrev(current)  
+            newNode.setNext(current.getNext())  
+            current.getNext().setPrev(newNode)  
+            current.setNext(newNode)  
+        self.length += 1
+
+    
+    def deleteFirstNode(self):
+        if self.head is None:
+            print("Empty Doubly Linked List")
+        else:
+            self.head = self.head.getNext()  
+            self.head.setPrev(None) 
+        self.length -= 1
+
+   
+    def deleteLastNode(self):
+        if self.head is None:
+            print("Empty Doubly Linked List")
+        else:
+            current = self.head
+            previous = None  
+            while current.getNext() is not None:  
+                previous = current  
+                current = current.getNext()  
+            previous.setNext(None) 
+        self.length -= 1
+
