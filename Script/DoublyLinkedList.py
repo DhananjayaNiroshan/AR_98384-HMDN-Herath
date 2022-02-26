@@ -1,13 +1,13 @@
 from Node import Node
 
+
 class DoublyLinkedList:
     def __init__(self):  # defining variable
         self.head = None  # initially first node is none
         self.tail = None  # initially last node is none
         self.length = 0  # initially doubly linked list length is zero
 
-    
-# Doubly Linked List length size
+    # Doubly Linked List length size
     def doublyListLength(self):
         current = self.head  # create current as head node
         count = 0  # creating count as zero
@@ -15,8 +15,8 @@ class DoublyLinkedList:
             count += 1
             current = current.getNext()  # change next of current as current
         return count
-    
-     # this function print contend of all doubly linked
+
+    # this function print contend of all doubly linked
     def printForwardList(self):
         if self.head is None:  # checking head node is none
             print("Empty Doubly Linked List")
@@ -26,7 +26,7 @@ class DoublyLinkedList:
                 print(current.getData(), end=" ")  # print data of current node
                 current = current.getNext()  # change next of current as current
 
-   # this function print to reverse contend of all doubly linked
+    # this function print to reverse contend of all doubly linked
     def printBackwardList(self):
         if self.head is None:  # checking head node is none
             print("Empty Doubly Linked List")
@@ -38,7 +38,7 @@ class DoublyLinkedList:
                 print(current.getData(), end=" ")  # print data of current
                 current = current.getPrev()  # change previous of current as current
 
-      # add new node to the beginning
+    # add new node to the beginning
     def addNodeBeginning(self, data):
         newNode = Node(data)
         newNode.setData(data)
@@ -51,7 +51,6 @@ class DoublyLinkedList:
             self.head = newNode  # change new node as head node
         self.length += 1  # adding one to length
 
-    
     # add new node to the end of the doubly linked list
     def addNodeEnd(self, data):
         newNode = Node(data)
@@ -90,9 +89,6 @@ class DoublyLinkedList:
             current.setNext(newNode)  # create next of current as new node
         self.length += 1
 
-
-    
-   
     # delete first node of the doubly linked list
     def deleteFirstNode(self):
         if self.head is None:
@@ -136,5 +132,3 @@ class DoublyLinkedList:
                 current.setNext(deleteNode.getNext())  # create next of deleteNode as next of current
                 current.getNext().setPrev(current)  # create previous of next in current as current
             self.length -= 1
-
-
