@@ -7,3 +7,17 @@ class Node:
 
     def getData(self):
         return self.data
+    def setData(self, data):
+        self.data = data
+
+    def getNext(self):
+        return self.next
+
+    def setNext(self, addressA):
+        self.next = addressA
+
+    def getPrev(self):
+        return self.prev
+
+    def setPrev(self, addressB):
+        self.prev = addressB
