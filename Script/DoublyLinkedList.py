@@ -15,3 +15,12 @@ class DoublyLinkedList:
             count += 1
             current = current.getNext()  
         return count
+    
+    def printForwardList(self):
+        if self.head is None:  
+            print("Empty Doubly Linked List")
+        else:
+            current = self.head
+            while current is not None:  
+                print(current.getData(), end=" ")  
+                current = current.getNext() 
