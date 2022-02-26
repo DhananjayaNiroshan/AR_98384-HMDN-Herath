@@ -25,17 +25,18 @@ class DoublyLinkedList:
             while current is not None:  # traversing until current node is none
                 print(current.getData(), end=" ")  # print data of current node
                 current = current.getNext()  # change next of current as current
-                
+
+   # this function print to reverse contend of all doubly linked
     def printBackwardList(self):
-        if self.head is None:  
+        if self.head is None:  # checking head node is none
             print("Empty Doubly Linked List")
         else:
             current = self.head
-            while current.getNext() is not None:  
-                current = current.getNext()  
-            while current is not None:  
-                print(current.getData(), end=" ")  
-                current = current.getPrev()  
+            while current.getNext() is not None:  # traversing until next of current is none
+                current = current.getNext()  # change next of new node as current
+            while current is not None:  # traversing until current is none
+                print(current.getData(), end=" ")  # print data of current
+                current = current.getPrev()  # change previous of current as current
 
     def addNodeBeginning(self, data):
         newNode = Node(data)
