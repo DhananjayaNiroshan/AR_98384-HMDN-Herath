@@ -127,3 +127,25 @@ def addNodeInPos(self, pos, data):
             previous.setNext(None) 
         self.length -= 1
 
+def deleteNodeByPos(self, Pos):
+        if self.head is None:
+            print("Empty Doubly Linked List")
+            return None
+        if self.length > Pos > -1:  
+            if Pos == 0: 
+                self.deleteFirstNode()  
+            elif Pos == self.length - 1:  
+                self.deleteLastNode()  
+            else:
+                count = 0
+                current = self.head
+                while count != Pos - 1:  
+                    count += 1
+                    current = current.getNext()  
+                
+                deleteNode = current.getNext()
+                current.setNext(deleteNode.getNext())  
+                current.getNext().setPrev(current) 
+            self.length -= 1
+
+
