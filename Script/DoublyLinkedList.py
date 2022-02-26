@@ -16,15 +16,16 @@ class DoublyLinkedList:
             current = current.getNext()  # change next of current as current
         return count
     
+     # this function print contend of all doubly linked
     def printForwardList(self):
-        if self.head is None:  
+        if self.head is None:  # checking head node is none
             print("Empty Doubly Linked List")
         else:
             current = self.head
-            while current is not None:  
-                print(current.getData(), end=" ")  
-                current = current.getNext() 
-    
+            while current is not None:  # traversing until current node is none
+                print(current.getData(), end=" ")  # print data of current node
+                current = current.getNext()  # change next of current as current
+                
     def printBackwardList(self):
         if self.head is None:  
             print("Empty Doubly Linked List")
