@@ -7,12 +7,13 @@ class DoublyLinkedList:
         self.length = 0  # initially doubly linked list length is zero
 
     
+# Doubly Linked List length size
     def doublyListLength(self):
-        current = self.head 
-        count = 0  
-        while current is not None:  
+        current = self.head  # create current as head node
+        count = 0  # creating count as zero
+        while current is not None:  # traversing until current node is none
             count += 1
-            current = current.getNext()  
+            current = current.getNext()  # change next of current as current
         return count
     
     def printForwardList(self):
