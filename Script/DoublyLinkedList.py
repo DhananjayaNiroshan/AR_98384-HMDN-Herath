@@ -52,6 +52,7 @@ class DoublyLinkedList:
         self.length += 1  # adding one to length
 
     
+    # add new node to the end of the doubly linked list
     def addNodeEnd(self, data):
         newNode = Node(data)
         newNode.setData(data)
@@ -59,55 +60,36 @@ class DoublyLinkedList:
             self.head = newNode
         else:
             current = self.head
-            while current.getNext() is not None:  
-                current = current.getNext()  
-            current.setNext(newNode)  
-            newNode.setPrev(current)  
-            newNode.setNext(None)  
-        self.length += 1
-    def addNodeInPos(self, pos, data):
-       
-        if pos > self.length - 1 or pos < 0:
-            return None
-        elif pos == self.length - 1:  
-            self.addNodeEnd(data)  
-        elif pos == 0:  
-            self.addNodeBeginning(data)  
-        else:
-            newNode = Node(data)
-            newNode.setData(data)
-            current = self.head
-            count = 0
-            while count != pos - 1:  
-                current = current.getNext()  
-                count += 1
-            newNode.setPrev(current)  
-            newNode.setNext(current.getNext())  
-            current.getNext().setPrev(newNode)  
-            current.setNext(newNode)  
+            while current.getNext() is not None:  # traversing until next of current is none
+                current = current.getNext()  # change next of current as current
+            current.setNext(newNode)  # create next of current as new node
+            newNode.setPrev(current)  # create previous of new node as current
+            newNode.setNext(None)  # create next of new node as none
         self.length += 1
 
-def addNodeInPos(self, pos, data):
-       
+    # add new node to given position of the doubly linked list
+    def addNodeInPos(self, pos, data):
+        # checking position is greater than length mines one or position is less than zero
         if pos > self.length - 1 or pos < 0:
             return None
-        elif pos == self.length - 1:  
-            self.addNodeEnd(data)  
-        elif pos == 0:  
-            self.addNodeBeginning(data)  
+        elif pos == self.length - 1:  # checking position is equal to length mines one
+            self.addNodeEnd(data)  # running addNodeEnd function
+        elif pos == 0:  # checking position is equal to zero
+            self.addNodeBeginning(data)  # running addNodeBeginning function
         else:
             newNode = Node(data)
             newNode.setData(data)
             current = self.head
             count = 0
-            while count != pos - 1:  
-                current = current.getNext()  
+            while count != pos - 1:  # traversing until the previous node before the position
+                current = current.getNext()  # change next of current as current
                 count += 1
-            newNode.setPrev(current)  
-            newNode.setNext(current.getNext())  
-            current.getNext().setPrev(newNode)  
-            current.setNext(newNode)  
+            newNode.setPrev(current)  # create previous of new node as current
+            newNode.setNext(current.getNext())  # create next of new node as next of current
+            current.getNext().setPrev(newNode)  # create previous of next in current as new node
+            current.setNext(newNode)  # create next of current as new node
         self.length += 1
+
 
     
     def deleteFirstNode(self):
