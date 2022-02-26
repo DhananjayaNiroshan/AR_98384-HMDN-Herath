@@ -92,46 +92,49 @@ class DoublyLinkedList:
 
 
     
+   
+    # delete first node of the doubly linked list
     def deleteFirstNode(self):
         if self.head is None:
             print("Empty Doubly Linked List")
         else:
-            self.head = self.head.getNext()  
-            self.head.setPrev(None) 
+            self.head = self.head.getNext()  # change next of head as head
+            self.head.setPrev(None)  # create previous of head as none
         self.length -= 1
 
-   
+    # delete last node of the doubly linked list
     def deleteLastNode(self):
         if self.head is None:
             print("Empty Doubly Linked List")
         else:
             current = self.head
-            previous = None  
-            while current.getNext() is not None:  
-                previous = current  
-                current = current.getNext()  
-            previous.setNext(None) 
+            previous = None  # create previous node as none
+            while current.getNext() is not None:  # traversing until next of current is none
+                previous = current  # change current as previous
+                current = current.getNext()  # change next of current as current
+            previous.setNext(None)  # create next of previous as none
         self.length -= 1
 
-def deleteNodeByPos(self, Pos):
+    # delete given position node
+    def deleteNodeByPos(self, Pos):
         if self.head is None:
             print("Empty Doubly Linked List")
             return None
-        if self.length > Pos > -1:  
-            if Pos == 0: 
-                self.deleteFirstNode()  
-            elif Pos == self.length - 1:  
-                self.deleteLastNode()  
+        if self.length > Pos > -1:  # checking length greater than position and one mines less than position
+            if Pos == 0:  # checking position is equal to zero
+                self.deleteFirstNode()  # running deleteFirstNode function
+            elif Pos == self.length - 1:  # checking position is equal to length mines one
+                self.deleteLastNode()  # running deleteLastNode function
             else:
                 count = 0
                 current = self.head
-                while count != Pos - 1:  
+                while count != Pos - 1:  # traversing until the previous node before the position
                     count += 1
-                    current = current.getNext()  
-                
+                    current = current.getNext()  # change next of current as current
+                # create a deleteNode variable and next of current assign it
                 deleteNode = current.getNext()
-                current.setNext(deleteNode.getNext())  
-                current.getNext().setPrev(current) 
+                current.setNext(deleteNode.getNext())  # create next of deleteNode as next of current
+                current.getNext().setPrev(current)  # create previous of next in current as current
             self.length -= 1
 
 
